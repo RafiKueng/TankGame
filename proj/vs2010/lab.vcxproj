@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{051E8A43-9B73-4EB6-891A-0B0E3D6D8936}</ProjectGuid>
+    <RootNamespace>lab</RootNamespace>
+    <ProjectName>TankGame</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <CustomBuildAfterTargets />
+    <IncludePath>..\..\ext\openal-1.1\include;..\..\ext\freealut-1.1.0-bin\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\ext\openal-1.1\libs\Win32;..\..\ext\freealut-1.1.0-bin\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\ext\glut-3.7.6-bin;..\..\ext\glew-1.5.8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\ext\glut-3.7.6-bin;..\..\ext\openal-1.1\libs\Win32;..\..\ext\freealut-1.1.0-bin\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glut32.lib;openal32.lib;alut.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+      <Outputs>glut32.dll</Outputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\AStarNode.hpp" />
+    <ClInclude Include="..\..\src\block.hpp" />
+    <ClInclude Include="..\..\src\CollisionModel.h" />
+    <ClInclude Include="..\..\src\fileUtils.hpp" />
+    <ClInclude Include="..\..\src\house.hpp" />
+    <ClInclude Include="..\..\src\material.hpp" />
+    <ClInclude Include="..\..\src\particleSystem.hpp" />
+    <ClInclude Include="..\..\src\place.hpp" />
+    <ClInclude Include="..\..\src\section.hpp" />
+    <ClInclude Include="..\..\src\azimuthBar.hpp" />
+    <ClInclude Include="..\..\src\bullet.hpp" />
+    <ClInclude Include="..\..\src\config.hpp" />
+    <ClInclude Include="..\..\src\enemy.hpp" />
+    <ClInclude Include="..\..\src\gameStateInfo.hpp" />
+    <ClInclude Include="..\..\src\generator.hpp" />
+    <ClInclude Include="..\..\src\landscape.hpp" />
+    <ClInclude Include="..\..\src\parameters.hpp" />
+    <ClInclude Include="..\..\src\particle.hpp" />
+    <ClInclude Include="..\..\src\powerUp.hpp" />
+    <ClInclude Include="..\..\src\skybox.hpp" />
+    <ClInclude Include="..\..\src\sound.hpp" />
+    <ClInclude Include="..\..\src\street.hpp" />
+    <ClInclude Include="..\..\src\tank.hpp" />
+    <ClInclude Include="..\..\src\defs.hpp" />
+    <ClInclude Include="..\..\src\drawable.hpp" />
+    <ClInclude Include="..\..\src\elevationBar.hpp" />
+    <ClInclude Include="..\..\src\exception.hpp" />
+    <ClInclude Include="..\..\src\gl_includes.hpp" />
+    <ClInclude Include="..\..\src\powerBar.hpp" />
+    <ClInclude Include="..\..\src\scene.hpp" />
+    <ClInclude Include="..\..\src\textBox.hpp" />
+    <ClInclude Include="..\..\src\texture.hpp" />
+    <ClInclude Include="..\..\src\tgaTexture.hpp" />
+    <ClInclude Include="..\..\src\time.hpp" />
+    <ClInclude Include="..\..\src\types.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\azimuthBar.cpp" />
+    <ClCompile Include="..\..\src\block.cpp" />
+    <ClCompile Include="..\..\src\bullet.cpp" />
+    <ClCompile Include="..\..\src\CollisionModel.cpp" />
+    <ClCompile Include="..\..\src\enemy.cpp" />
+    <ClCompile Include="..\..\src\fileUtils.cpp" />
+    <ClCompile Include="..\..\src\gameStateInfo.cpp" />
+    <ClCompile Include="..\..\src\generator.cpp" />
+    <ClCompile Include="..\..\src\house.cpp" />
+    <ClCompile Include="..\..\src\landscape.cpp" />
+    <ClCompile Include="..\..\src\material.cpp" />
+    <ClCompile Include="..\..\src\particle.cpp" />
+    <ClCompile Include="..\..\src\particleSystem.cpp" />
+    <ClCompile Include="..\..\src\place.cpp" />
+    <ClCompile Include="..\..\src\powerUp.cpp" />
+    <ClCompile Include="..\..\src\section.cpp" />
+    <ClCompile Include="..\..\src\skybox.cpp" />
+    <ClCompile Include="..\..\src\sound.cpp" />
+    <ClCompile Include="..\..\src\street.cpp" />
+    <ClCompile Include="..\..\src\tank.cpp" />
+    <ClCompile Include="..\..\src\elevationBar.cpp" />
+    <ClCompile Include="..\..\src\main.cpp" />
+    <ClCompile Include="..\..\src\powerBar.cpp" />
+    <ClCompile Include="..\..\src\scene.cpp" />
+    <ClCompile Include="..\..\src\textBox.cpp" />
+    <ClCompile Include="..\..\src\texture.cpp" />
+    <ClCompile Include="..\..\src\tgaTexture.cpp" />
+    <ClCompile Include="..\..\src\time.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
